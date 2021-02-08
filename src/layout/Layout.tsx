@@ -19,7 +19,7 @@ import { theme } from '../styles/theme'
   https://github.com/styled-components/styled-components/issues/1593
 */
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   html {
     font-size: ${theme.fontSizeBase};
   }
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: ${theme.fonts.nunito};
-    background: linear-gradient(180deg, #1F2041 0%, #4D31A6 100%);
+    background: ${theme.colors.white};
     font-size: ${theme.fontSizeBaseRem};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

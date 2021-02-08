@@ -3,6 +3,7 @@ import nunito400 from '../assets/fonts/nunito400.woff2'
 import nunito600 from '../assets/fonts/nunito600.woff2'
 import nunito700 from '../assets/fonts/nunito700.woff2'
 import nunito800 from '../assets/fonts/nunito800.woff2'
+import colors from './colors'
 
 export const montVariants = {
   nunito300,
@@ -15,23 +16,10 @@ export const montVariants = {
 export default {
   fontSizeBase: '62.5%',
   fontSizeBaseRem: '1.4rem',
-  fontColorBase: '#fff',
-  fontWeight: {
-    thin: 200,
-    regular: 300,
-    semibold: 400,
-    bold: 600,
-    boldExtra: 700,
-  },
-  fontSize: {
-    smallest: '1.2rem',
-    small: '1.6rem',
-    regular: '1.8rem',
-    big: '2rem',
-    bigger: '2.5rem',
-    huge: '3.5rem',
-    hugeExtra: '4rem',
-  },
+  fontColorBase: colors.black,
+  fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
+  fontSizes: [10, 12, 14, 16, 20, 24, 36, 48, 60, 96].map((n: number) => n / 10 + 'rem'),
+  lineHeights: [12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56].map((n: number) => n / 10 + 'rem'),
   fontSizeResp: {},
   letterSpacings: {
     extraTight: '0.15px',

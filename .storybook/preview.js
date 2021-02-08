@@ -1,4 +1,18 @@
+import React from 'react'
+import { addDecorator, addParameters } from '@storybook/react'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyle } from '../src/layout/Layout'
+import { theme } from '../src/styles/theme'
 
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-}
+addDecorator((story) => (
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    {story()}
+  </ThemeProvider>
+))
+
+addParameters({
+  options: {
+    showRoots: true,
+  },
+})

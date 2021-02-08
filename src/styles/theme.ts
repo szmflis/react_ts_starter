@@ -13,3 +13,5 @@ export const theme = {
   effects,
   keyframes,
 }
+
+export type Theme = typeof theme
