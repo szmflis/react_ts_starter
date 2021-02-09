@@ -4,6 +4,7 @@ import layout from './layout'
 import buttons from './variants/buttons'
 import effects from './effects'
 import keyframes from './keyframes'
+import shadows from './shadows'
 
 export const theme = {
   colors,
@@ -12,6 +13,7 @@ export const theme = {
   buttons,
   effects,
   keyframes,
+  shadows,
 }
 
 export type Theme = typeof theme

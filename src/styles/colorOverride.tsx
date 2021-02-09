@@ -1,5 +1,8 @@
 import { BackgroundColorProps, compose, opacity, OpacityProps, system } from 'styled-system'
 
+/* Overriding default property names from styled system */
+
+/* bg instead of backgroundColor */
 const background = system({
   backgroundColor: {
     property: 'backgroundColor',
@@ -13,6 +16,8 @@ const background = system({
 export type TextColorProps = {
   textColor?: string
 }
+
+/* textColor instead of color */
 const textColor = system({
   textColor: {
     property: 'color',
@@ -21,9 +26,3 @@ const textColor = system({
 })
 export type ColorProps = TextColorProps & BackgroundColorProps & OpacityProps
 export const color = compose(background, opacity, textColor)
-
-const dupa = {
-  dupa123: 100
-}
-
-const dupaznowu = dupa.
