@@ -21,9 +21,33 @@ export interface LinkProps extends HTMLAttributes<HTMLAnchorElement>, SpaceProps
 export const Title = styled.h1<CustomTypographyProps>`
   margin: 0;
   padding: 0;
-  font-size: ${theme.fontSizes[4]};
+  font-size: ${theme.fontSizes[5]};
   font-weight: ${theme.fontWeights[4]};
   letter-spacing: ${theme.letterSpacings.mega};
+
+  ${space};
+  ${color};
+  ${typography};
+`
+
+export const SectionTitle = styled.h2<CustomTypographyProps>`
+  margin: 0;
+  padding: 0;
+  font-size: ${theme.fontSizes[4]};
+  font-weight: ${theme.fontWeights[4]};
+  letter-spacing: ${theme.letterSpacings.extra};
+
+  ${space};
+  ${color};
+  ${typography};
+`
+
+export const Subtitle = styled.h3<CustomTypographyProps>`
+  margin: 0;
+  padding: 0;
+  font-size: ${theme.fontSizes[3]};
+  font-weight: ${theme.fontWeights[4]};
+  letter-spacing: ${theme.letterSpacings.normal};
 
   ${space};
   ${color};
@@ -43,16 +67,52 @@ export const Paragraph = styled.p<CustomTypographyProps>`
   ${typography};
 `
 
-export const AnchorLink = styled.a<LinkProps>`
+export const Caption = styled.p<CustomTypographyProps>`
+  margin: 0;
+  padding: 0;
+  font-size: ${theme.fontSizes[2]};
+  font-weight: ${theme.fontWeights[3]};
+  letter-spacing: ${theme.letterSpacings.tight};
+
+  ${space};
+  ${color};
+  ${typography};
+`
+
+export const HighlightedNumber = styled.p<CustomTypographyProps>`
+  margin: 0;
+  padding: 0;
+  font-size: ${theme.fontSizes[5]};
+  font-weight: ${theme.fontWeights[8]};
+  letter-spacing: ${theme.letterSpacings.mega};
+
+  ${space};
+  ${color};
+  ${typography};
+`
+
+export const Status = styled.p<CustomTypographyProps>`
+  margin: 0;
+  padding: 0;
+  font-size: ${theme.fontSizes[5]};
+  font-weight: ${theme.fontWeights[3]};
+  letter-spacing: ${theme.letterSpacings.normal};
+
+  ${space};
+  ${color};
+  ${typography};
+`
+
+export const RouterLink = styled(Link)<LinkProps>`
     margin: 0;
     padding: 0;
-    font-size: ${(props) => props.theme.fontSizes[2]};
-    font-weight: ${(props) => props.theme.fontWeights[5]};
-    letter-spacing: ${(props) => props.theme.letterSpacings.normal};
-    color: ${(props) => props.theme.colors.black};
+    font-size: ${theme.fontSizes[2]};
+    font-weight: ${theme.fontWeights[5]};
+    letter-spacing: ${theme.letterSpacings.normal};
+    color: ${theme.colors.black};
 
     &:hover {
-        color: ${(props) => lighten(0.15, props.theme.colors.black)};
+        color: ${lighten(0.15, theme.colors.black)};
     }
 
     ${(props) =>
@@ -64,10 +124,42 @@ export const AnchorLink = styled.a<LinkProps>`
     ${(props) =>
       props.reverse &&
       css`
-        color: ${(props) => props.theme.colors.white};
+        color: ${theme.colors.white};
 
         &:hover {
-          color: ${(props) => darken(0.15, props.theme.colors.white)};
+          color: ${darken(0.15, theme.colors.white)};
+        }
+      `}
+
+    ${space};
+    ${typography};
+`
+
+export const AnchorLink = styled.a<LinkProps>`
+    margin: 0;
+    padding: 0;
+    font-size: ${theme.fontSizes[2]};
+    font-weight: ${theme.fontWeights[5]};
+    letter-spacing: ${theme.letterSpacings.normal};
+    color: ${theme.colors.black};
+
+    &:hover {
+        color: ${lighten(0.15, theme.colors.black)};
+    }
+
+    ${(props) =>
+      props.noDecoration &&
+      css`
+        text-decoration: none;
+      `}
+
+    ${(props) =>
+      props.reverse &&
+      css`
+        color: ${theme.colors.white};
+
+        &:hover {
+          color: ${darken(0.15, theme.colors.white)};
         }
       `}
 
