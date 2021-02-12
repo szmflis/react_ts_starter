@@ -19,6 +19,6 @@ export default {
   greyDarkest: '#C2C2C2',
   greyDark: '#D8D8D8',
   grey: '#E0E0E0',
-  greyLight: '#E8E8E8',
-  greyLightest: '#EFEFEF',
+  greyLight: '#F5F5F5',
+  greyLightest: '#FAFAFA',
 }

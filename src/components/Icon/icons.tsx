@@ -1,13 +1,9 @@
-//import React, { SVGAttributes } from 'react'
+import React from 'react'
+import { FaRocket } from 'react-icons/fa'
 
-//export interface IconProps extends SVGAttributes<SVGPathElement> {
-//  size?: number
-//  color?: string
-//}
-
-//const IconGmail: React.FC<IconProps> = ({ size, color }) => {
+//const IconGmail: React.FC<SVGAttributes<SVGPathElement>> = () => {
 //  return (
-//    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+//    <svg width="1em" height="1em" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
 //      <path
 //        d="M5 20.7692C5 17.583 7.61167 15 10.8333 15H69.1667C72.3883 15 75 17.583 75 20.7692V59.2307C75 62.417 72.3883 65 69.1667 65H10.8333C7.61167 65 5 62.417 5 59.2307V20.7692Z"
 //        fill="white"
@@ -45,4 +41,36 @@
 //  )
 //}
 
-//export const icons = { IconGmail }
+//const IconArrowCircle: React.FC<SVGAttributes<SVGPathElement>> = () => {
+//  return (
+//    <svg width="1em" height="1em" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+//      <path
+//        d="M68 40C68 55.464 55.464 68 40 68C24.536 68 12 55.464 12 40C12 24.536 24.536 12 40 12C55.464 12 68 24.536 68 40Z"
+//        stroke="#C2CCDE"
+//        strokeLinecap="round"
+//        strokeLinejoin="round"
+//      />
+//      <path
+//        d="M27.9814 44.0915L38.3905 33.6824C39.2691 32.8038 40.6938 32.8038 41.5724 33.6824L51.9814 44.0915"
+//        stroke="#C2CCDE"
+//        strokeLinecap="round"
+//        strokeLinejoin="round"
+//      />
+//    </svg>
+//  )
+//}
+
+//const IconComment: React.FC<SVGAttributes<SVGPathElement>> = () => {
+//  return (
+//    <svg width="1em" height="1em" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+//      <path
+//        d="M17.1894 52.3071C16.7399 51.4874 16.3331 50.6401 15.9719 49.7681C13.3464 43.4296 13.3464 36.3077 15.9719 29.9691C18.5975 23.6306 23.6334 18.5946 29.9719 15.9691C36.3105 13.3436 43.4324 13.3436 49.7709 15.9691C56.1095 18.5946 61.1454 23.6306 63.7709 29.9691C66.3964 36.3077 66.3964 43.4296 63.7709 49.7681C61.1454 56.1067 56.1095 61.1426 49.7709 63.7681C43.4324 66.3936 36.3105 66.3936 29.9719 63.7681C29.0985 63.4063 28.2498 62.9988 27.4287 62.5483L13 66.7373L17.1894 52.3071Z"
+//        stroke="#C2CCDE"
+//        strokeLinecap="round"
+//        strokeLinejoin="round"
+//      />
+//    </svg>
+//  )
+//}
+
+export const icons = { rocket: <FaRocket /> }
