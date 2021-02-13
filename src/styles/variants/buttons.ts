@@ -4,33 +4,32 @@ import colors from '../colors'
 export default {
   primary: {
     background: colors.primary,
-    '&:hover': {
-      background: darken(0.1, colors.primary),
-    },
+    color: colors.white,
   },
   secondary: {
     background: colors.primaryLight,
-    '&:hover': {
-      background: darken(0.1, colors.primaryLight),
-    },
+    color: colors.white,
+  },
+  warning: {
+    background: colors.warning,
+  },
+  success: {
+    background: colors.success,
+    color: colors.white,
   },
   cancel: {
     background: colors.danger,
-    '&:hover': {
-      background: darken(0.1, colors.danger),
-    },
   },
   transparent: {
     background: 'inherit',
-    '&:hover': {
-      background: darken(0.1, colors.white),
-    },
   },
   disabled: {
     cursor: 'inherit',
     background: colors.disabled,
     '&:hover': {
       background: colors.disabled,
+      transform: 'translateY(0)',
+      'box-shadow': '0px 8px 15px rgba(0, 0, 0, 0.1);',
     },
     '&:active': {
       outline: 'none',

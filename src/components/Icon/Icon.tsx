@@ -1,23 +1,28 @@
 import styled from 'styled-components'
-import { space, SpaceProps, typography, TypographyProps } from 'styled-system'
+import { space, SpaceProps, typography, TypographyProps, variant } from 'styled-system'
 import { RawIcon, RawIconProps } from './RawIcon'
 import { color, ColorProps } from '../../styles/colorOverride'
-import { theme } from '../../styles/theme'
+import icons from '../../styles/variants/icons'
 
 export interface IconProps extends RawIconProps, SpaceProps, TypographyProps, ColorProps {
-  fill?: string
+  transTime?: number
+  variant?: keyof typeof icons
 }
 
-export const Icon = styled(RawIcon)<IconProps>`
-  font-size: ${theme.fontSizes[5]};
+/* variants are used for on hover effects  */
+const iconVariant = variant({ key: 'icons' })
 
+/* 
+  Actual styling happens on Flex component returned from RawIcon. 
+  That's becouse svg icons can be modified as text, so applying textSize
+  to that Flex component actually sizes the icon aswell.
+  It also makes centering alot easier.
+*/
+export const Icon = styled(RawIcon)<IconProps>`
   ${space};
   ${color};
   ${typography};
+  ${iconVariant};
 
-  transition: 0.3s;
-
-  &:hover {
-    transform: scale(1.2);
-  }
+  transition: ${({ transTime }) => (transTime ? transTime : 0.4)}s;
 `
