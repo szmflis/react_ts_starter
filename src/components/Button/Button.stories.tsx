@@ -44,25 +44,25 @@ storiesOf('Base/Components', module).add('Button', () => (
       Icon&text Buttons
     </Title>
     <Flex flexWrap="wrap" py={3} my={3}>
-      <Button variant="primary" mx={4} onClick={onClick} icon="github">
+      <Button variant="primary" mx={4} onClick={onClick} icon="info">
         Primary
       </Button>
-      <Button variant="secondary" mx={4} onClick={onClick} icon="github">
+      <Button variant="secondary" mx={4} onClick={onClick} icon="launch">
         Primary Light
       </Button>
-      <Button variant="success" mx={4} onClick={onClick} icon="github">
+      <Button variant="success" mx={4} onClick={onClick} icon="done">
         Success
       </Button>
-      <Button variant="warning" mx={4} onClick={onClick} icon="github">
+      <Button variant="warning" mx={4} onClick={onClick} icon="doneAll">
         warning
       </Button>
-      <Button variant="cancel" mx={4} onClick={onClick} icon="github">
+      <Button variant="cancel" mx={4} onClick={onClick} icon="delete">
         Cancel
       </Button>
       <Button variant="transparent" mx={4} onClick={onClick} icon="github">
         transparent
       </Button>
-      <Button variant="disabled" mx={4} onClick={onClick} icon="github">
+      <Button variant="disabled" mx={4} onClick={onClick} icon="microchip">
         Disabled
       </Button>
     </Flex>
@@ -98,25 +98,25 @@ storiesOf('Base/Components', module).add('Button', () => (
       Small Buttons With Icons
     </Title>
     <Flex flexWrap="wrap" py={3} my={3}>
-      <Button variant="primary" mx={4} onClick={onClick} icon="settings" small>
+      <Button variant="primary" mx={4} onClick={onClick} icon="arrowRepeat" small>
         Primary
       </Button>
-      <Button variant="secondary" mx={4} onClick={onClick} icon="settings" small>
+      <Button variant="secondary" mx={4} onClick={onClick} icon="done" small>
         Primary Light
       </Button>
-      <Button variant="success" mx={4} onClick={onClick} icon="settings" small>
+      <Button variant="success" mx={4} onClick={onClick} icon="doneAll" small>
         Success
       </Button>
-      <Button variant="warning" mx={4} onClick={onClick} icon="settings" small>
+      <Button variant="warning" mx={4} onClick={onClick} icon="launch" small>
         warning
       </Button>
-      <Button variant="cancel" mx={4} onClick={onClick} icon="settings" small>
+      <Button variant="cancel" mx={4} onClick={onClick} icon="delete" small>
         Cancel
       </Button>
-      <Button variant="transparent" mx={4} onClick={onClick} icon="settings" small>
+      <Button variant="transparent" mx={4} onClick={onClick} icon="info" small>
         transparent
       </Button>
-      <Button variant="disabled" mx={4} onClick={onClick} icon="settings" small>
+      <Button variant="disabled" mx={4} onClick={onClick} icon="microchip" small>
         Disabled
       </Button>
     </Flex>
@@ -125,13 +125,13 @@ storiesOf('Base/Components', module).add('Button', () => (
       Icons only buttons
     </Title>
     <Flex flexWrap="wrap" py={3} my={3}>
-      <Button variant="primary" mx={4} onClick={onClick} icon="settings" />
-      <Button variant="secondary" mx={4} onClick={onClick} icon="settings" />
-      <Button variant="success" mx={4} onClick={onClick} icon="github" />
-      <Button variant="warning" mx={4} onClick={onClick} icon="github" />
-      <Button variant="cancel" mx={4} onClick={onClick} icon="arrowRepeat" />
-      <Button variant="transparent" mx={4} onClick={onClick} icon="microchip" />
-      <Button variant="disabled" mx={4} onClick={onClick} icon="microchip" />
+      <Button variant="primary" mx={4} onClick={onClick} icon="arrowRepeat" />
+      <Button variant="secondary" mx={4} onClick={onClick} icon="checkedSquare" />
+      <Button variant="success" mx={4} onClick={onClick} icon="doneAll" />
+      <Button variant="warning" mx={4} onClick={onClick} icon="microchip" />
+      <Button variant="cancel" mx={4} onClick={onClick} icon="delete" />
+      <Button variant="transparent" mx={4} onClick={onClick} icon="launch" />
+      <Button variant="disabled" mx={4} onClick={onClick} icon="square" />
     </Flex>
   </Flex>
 ))
