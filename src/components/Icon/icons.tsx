@@ -2,7 +2,7 @@ import React from 'react'
 import { BiMicrochip, BiCheckSquare, BiSquare } from 'react-icons/bi'
 import { BsArrowRepeat } from 'react-icons/bs'
 import { VscGithub } from 'react-icons/vsc'
-import { MdSettings, MdLaunch, MdInfoOutline, MdDone, MdDoneAll, MdDeleteForever } from 'react-icons/md'
+import { MdSettings, MdLaunch, MdInfoOutline, MdDone, MdDoneAll, MdDeleteForever, MdClose } from 'react-icons/md'
 
 /* importing icons from react-icons lib */
 /* each accessible via "type" property on Icon component */
@@ -20,4 +20,5 @@ export const icons = {
   done: <MdDone />,
   doneAll: <MdDoneAll />,
   delete: <MdDeleteForever />,
+  close: <MdClose />,
 }
