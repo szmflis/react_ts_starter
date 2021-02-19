@@ -1,10 +1,25 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { space, SpaceProps } from 'styled-system'
 import { theme } from '../../styles/theme'
 
 import { RawInput, RawInputProps } from './RawInput'
 
-export interface InputProps extends RawInputProps, SpaceProps {}
+export interface InputProps extends RawInputProps, SpaceProps {
+  valid?: boolean
+  touched?: boolean
+}
+
+const touchedInvalid = css`
+  border-bottom: 1px solid ${theme.colors.warning};
+`
+
+const touchedValid = css`
+  border-bottom: 1px solid ${theme.colors.success};
+`
+
+const untouched = css`
+  border-bottom: 1px solid ${theme.colors.primaryDark};
+`
 
 export const Input = styled(RawInput)<InputProps>`
   display: flex;
@@ -24,10 +39,15 @@ export const Input = styled(RawInput)<InputProps>`
     &::placeholder {
       opacity: 0.7;
     }
+
     &:focus {
-      border-bottom-color: ${theme.colors.primaryDark};
-      outline: 0;
+      outline: none;
+      ${({ valid }) => (valid ? touchedValid : touchedInvalid)};
+      ${({ touched }) => !touched && untouched};
     }
+
+    ${({ valid }) => (valid ? touchedValid : touchedInvalid)};
+    ${({ touched }) => !touched && untouched};
   }
   ${space};
 `

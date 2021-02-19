@@ -20,6 +20,10 @@ const untouched = css`
   border: 1px solid ${theme.colors.grey};
 `
 
+const untouchedFocus = css`
+  border: 1px solid ${theme.colors.primaryDark};
+`
+
 export const Textarea = styled(RawTextbox)<TextareaProps>`
   display: flex;
   flex-direction: column;
@@ -33,7 +37,8 @@ export const Textarea = styled(RawTextbox)<TextareaProps>`
 
     &:focus {
       outline: none;
-      border: 1px solid ${theme.colors.primaryLight};
+      ${({ valid }) => (valid ? touchedValid : touchedInvalid)};
+      ${({ touched }) => !touched && untouchedFocus};
     }
 
     ${({ valid }) => (valid ? touchedValid : touchedInvalid)};

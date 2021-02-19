@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { storiesOf } from '@storybook/react'
 import { Textarea } from './Textbox'
 import { Box } from '../Box/Box'
-import { Title } from '../Typography/Typography'
+import { Paragraph, Title } from '../Typography/Typography'
 import { Button } from '../Button/Button'
 
 storiesOf('Base/Components', module).add('Textbox', () => {
@@ -30,6 +30,12 @@ storiesOf('Base/Components', module).add('Textbox', () => {
 
   return (
     <Box m={4}>
+      <Paragraph py={2}>
+        The input element color can be changed accordingly to wether or not input is valid. In this case if the input is
+        of length 4-9 its valid. Colors are changed by passing valid/touched prop to Input component.
+      </Paragraph>
+      <Paragraph py={2}>In this case the color change is visible after submiting (touching).</Paragraph>
+
       <form onSubmit={handleSubmit}>
         <Title my={4}>Textbox no label</Title>
         <Textarea placeholder="Input text" onChange={onChange} touched={touched} valid={valid} />
