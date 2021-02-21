@@ -32,7 +32,6 @@ export const Checkbox = styled(RawCheckbox)<CheckboxProps>`
   input {
     position: absolute;
     opacity: 0;
-    cursor: pointer;
     height: 0;
     width: 0;
     display: none;
