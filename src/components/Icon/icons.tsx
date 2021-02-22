@@ -1,5 +1,5 @@
 import React from 'react'
-import { BiMicrochip, BiCheckSquare, BiSquare } from 'react-icons/bi'
+import { BiMicrochip, BiCheckSquare, BiSquare, BiChevronDownCircle } from 'react-icons/bi'
 import { BsArrowRepeat } from 'react-icons/bs'
 import { VscGithub } from 'react-icons/vsc'
 import { MdSettings, MdLaunch, MdInfoOutline, MdDone, MdDoneAll, MdDeleteForever, MdClose } from 'react-icons/md'
@@ -21,4 +21,5 @@ export const icons = {
   doneAll: <MdDoneAll />,
   delete: <MdDeleteForever />,
   close: <MdClose />,
+  chevron: <BiChevronDownCircle />,
 }

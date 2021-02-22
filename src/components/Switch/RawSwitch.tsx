@@ -34,5 +34,4 @@ export const RawSwitch: React.FC<RawSwitchProps> = (props: RawSwitchProps) => {
   )
 }
 
-// selector (dropdown list)
 // searchbar with suggestions
