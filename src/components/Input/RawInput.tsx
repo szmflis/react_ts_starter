@@ -12,14 +12,19 @@ export const RawInput: React.FC<RawInputProps> = (props: RawInputProps) => {
     <input
       type={type}
       name={props.name}
+      value={props.value}
       onChange={props.onChange}
       onKeyPress={props.onKeyPress}
       placeholder={props.placeholder}
       autoComplete={props.autoComplete}
-      required={props.required}
-      value={props.value}
       autoFocus={props.autoFocus}
       disabled={props.disabled}
+      onBlur={props.onBlur}
+      title={props.title}
+      required={props.required}
+      pattern={props.pattern}
+      maxLength={props.maxLength}
+      minLength={props.minLength}
     />
   )
 

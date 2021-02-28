@@ -1,4 +1,3 @@
-import { darken } from 'polished'
 import colors from '../colors'
 
 export default {
@@ -22,6 +21,15 @@ export default {
   },
   transparent: {
     background: 'inherit',
+    'box-shadow': 'none',
+    '&:hover': {
+      'box-shadow': 'none',
+      'background-color': colors.grey,
+      transform: 'none',
+    },
+    '&:active': {
+      'background-color': colors.greyDark,
+    },
   },
   disabled: {
     cursor: 'inherit',

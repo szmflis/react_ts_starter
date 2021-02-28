@@ -53,7 +53,7 @@ export const Button = styled(RawButton)<ButtonProps>`
     margin: 5px;
 
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.1s;
+    transition: all 0.2s;
     border-radius: 35px;
 
     &:hover {

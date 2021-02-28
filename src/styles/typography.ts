@@ -1,17 +1,4 @@
-import nunito300 from '../assets/fonts/nunito300.woff2'
-import nunito400 from '../assets/fonts/nunito400.woff2'
-import nunito600 from '../assets/fonts/nunito600.woff2'
-import nunito700 from '../assets/fonts/nunito700.woff2'
-import nunito800 from '../assets/fonts/nunito800.woff2'
 import colors from './colors'
-
-export const montVariants = {
-  nunito300,
-  nunito400,
-  nunito600,
-  nunito700,
-  nunito800,
-}
 
 export default {
   fontSizeBase: '62.5%',

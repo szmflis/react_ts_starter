@@ -23,7 +23,7 @@ export const Switch = styled(RawSwitch)<SwitchProps>`
     height: 26px;
     padding: 0.4rem;
 
-    margin-right: ${({ label }) => (label ? '0.4rem' : '')};
+    margin-right: ${({ label }) => (label ? '0.8rem' : '')};
     background-color: ${({ checked }) => (checked ? theme.colors.primaryLight : theme.colors.greyDarkest)};
 
     border-radius: 25px;

@@ -3,6 +3,7 @@ import typography from './typography'
 import layout from './layout'
 import buttons from './variants/buttons'
 import icons from './variants/icons'
+import notifications from './variants/notifications'
 import tags from './variants/tags'
 import effects from './effects'
 import keyframes from './keyframes'
@@ -16,6 +17,7 @@ export const theme = {
   keyframes,
   shadows,
   buttons,
+  notifications,
   icons,
   tags,
 }

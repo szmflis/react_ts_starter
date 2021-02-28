@@ -3,7 +3,6 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Flex } from '../Flex/Flex'
 import { Title } from '../Typography/Typography'
-import { Box } from '../Box/Box'
 import { Button } from './Button'
 
 const onClick = (): void => {

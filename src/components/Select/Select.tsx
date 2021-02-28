@@ -82,13 +82,16 @@ export interface RawSelectProps extends SelectHTMLAttributes<HTMLSelectElement> 
   label?: string
 }
 
-const useOnClickOutside = (ref: React.RefObject<HTMLUListElement>, callback: any) => {
+const useOnClickOutside = (
+  ref: React.RefObject<HTMLUListElement>,
+  callback: (value: React.SetStateAction<boolean>) => void
+) => {
   useEffect(() => {
-    const listener = (event: any) => {
+    const listener = (event: MouseEvent | TouchEvent) => {
       if (!ref.current || ref.current.contains(event.target)) {
         return
       }
-      callback(event)
+      callback(true)
     }
     document.addEventListener('mousedown', listener)
     document.addEventListener('touchstart', listener)

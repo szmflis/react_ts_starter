@@ -47,6 +47,7 @@ storiesOf('Base/Components', module).add('Input', () => {
             valid={valid}
             py={5}
             placeholder="Login"
+            onBlur={() => setTouched(true)}
           />
           <Button type="submit" variant="primary" small icon="doneAll">
             Submit!

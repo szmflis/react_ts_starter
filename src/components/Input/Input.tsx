@@ -10,7 +10,7 @@ export interface InputProps extends RawInputProps, SpaceProps {
 }
 
 const touchedInvalid = css`
-  border-bottom: 1px solid ${theme.colors.warning};
+  border-bottom: 1px solid ${theme.colors.danger};
 `
 
 const touchedValid = css`
@@ -42,6 +42,7 @@ export const Input = styled(RawInput)<InputProps>`
 
     &:focus {
       outline: none;
+      background-color: ${theme.colors.greyLight};
       ${({ valid }) => (valid ? touchedValid : touchedInvalid)};
       ${({ touched }) => !touched && untouched};
     }
