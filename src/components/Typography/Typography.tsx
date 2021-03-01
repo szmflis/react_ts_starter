@@ -6,6 +6,7 @@ import styled, { css } from 'styled-components'
 import { theme } from '../../styles/theme'
 import { space, SpaceProps, typography, TypographyProps } from 'styled-system'
 import { color, ColorProps } from '../../styles/colorOverride'
+import { ListElement } from '../ListElement/ListElement'
 
 export interface CustomTypographyProps
   extends HTMLAttributes<HTMLFontElement>,
@@ -103,6 +104,8 @@ export const Status = styled.p<CustomTypographyProps>`
   ${typography};
 `
 
+// TODO make li's seperate components with icon on the right text/li on the left
+
 export const RouterLink = styled(Link)<LinkProps>`
     margin: 0;
     padding: 0;
@@ -144,7 +147,7 @@ export const AnchorLink = styled.a<LinkProps>`
     color: ${theme.colors.black};
 
     &:hover {
-        color: ${lighten(0.15, theme.colors.black)};
+        color: ${theme.colors.primaryDarkest};
     }
 
     ${(props) =>
@@ -163,6 +166,11 @@ export const AnchorLink = styled.a<LinkProps>`
         }
       `}
 
+    ${ListElement}:hover & {
+      color: ${theme.colors.primaryDarkest};
+    }
+    
+    
     ${space};
     ${typography};
 `
