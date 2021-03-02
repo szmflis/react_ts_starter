@@ -31,6 +31,7 @@ export interface ButtonProps
     BorderProps {
   variant?: keyof typeof buttons
   small?: boolean
+  reverse?: boolean
 }
 
 const buttonStyle = variant({ key: 'buttons' })
@@ -39,6 +40,7 @@ const buttonStyle = variant({ key: 'buttons' })
 
 export const Button = styled(RawButton)<ButtonProps>`
     display: flex;
+    flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -73,7 +75,14 @@ export const Button = styled(RawButton)<ButtonProps>`
     }
 
     ${Icon} {
-      margin-left: ${theme.space[3]}px;
+      ${({ reverse }) =>
+        reverse
+          ? css`
+              margin-right: ${theme.space[3]}px;
+            `
+          : css`
+              margin-left: ${theme.space[3]}px;
+            `}
       font-size: ${theme.fontSizes[4]};
     }
 

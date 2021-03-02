@@ -5,6 +5,7 @@ import { storiesOf } from '@storybook/react'
 import { Checkbox } from './Checkbox'
 import { Flex } from '../Flex/Flex'
 import { Title } from '../Typography/Typography'
+import { Space } from '../../../.storybook/properties'
 
 storiesOf('Base/Components', module).add('Checkbox', () => {
   const [check1, setCheck1] = useState(true)
@@ -16,16 +17,8 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
 
   return (
     <Flex p={5} flexDirection="column" width="100vw">
-      <Title>Checkboxes example:</Title>
-      <Flex
-        flexDirection="column"
-        mt={5}
-        border="2px solid"
-        borderColor="primaryLight"
-        borderRadius={1}
-        p={2}
-        maxWidth={5}
-      >
+      <Title my={5}>Checkboxes default:</Title>
+      <Flex flexDirection="column" p={2} maxWidth={9}>
         <Checkbox
           name="checked"
           checked={check1}
@@ -34,7 +27,7 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           }}
           label="Checked checkbox"
           p={1}
-          my={1}
+          my={3}
         />
         <Checkbox
           name="disabled"
@@ -45,7 +38,7 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           }}
           label="Disabled checkbox"
           p={1}
-          my={1}
+          my={3}
         />
         <Checkbox
           name="unchecked"
@@ -55,18 +48,10 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           }}
           label="Unchecked checkbox"
           p={1}
-          my={1}
+          my={3}
         />
       </Flex>
-      <Flex
-        flexDirection="column"
-        mt={5}
-        border="2px solid"
-        borderColor="primaryLight"
-        borderRadius={1}
-        p={2}
-        maxWidth={9}
-      >
+      <Flex flexDirection="column" p={2} maxWidth={9}>
         <Checkbox
           name="checked"
           checked={check4}
@@ -75,7 +60,7 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           }}
           label="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           p={1}
-          my={1}
+          my={3}
         />
         <Checkbox
           name="disabled"
@@ -86,7 +71,7 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           }}
           label="Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
           p={1}
-          my={1}
+          my={3}
         />
         <Checkbox
           name="unchecked"
@@ -96,8 +81,13 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           }}
           label="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque."
           p={1}
-          my={1}
+          my={3}
         />
+      </Flex>
+
+      <Title mt={6}>Checkbox properties:</Title>
+      <Flex flexWrap="wrap">
+        <Space />
       </Flex>
     </Flex>
   )

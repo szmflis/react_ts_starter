@@ -11,7 +11,7 @@ export interface ListElementLinkWrapperProps extends ListElementProps {
 export const ListElementLinkWrapper: React.FC<ListElementLinkWrapperProps> = (props: ListElementLinkWrapperProps) => {
   return (
     <ListElement {...props} onClick={() => window.open(props.href)}>
-      <AnchorLink href={props.href} noDecoration={props.noDecoration} reverse={props.anchorReverse}>
+      <AnchorLink noDecoration={props.noDecoration} reverse={props.anchorReverse}>
         {props.children}
       </AnchorLink>
     </ListElement>

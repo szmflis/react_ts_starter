@@ -12,10 +12,12 @@ export interface ListElementProps extends RawListElementProps, SpaceProps {
 export const ListElement = styled(RawListElement)<ListElementProps>`
   display: flex;
   flex-direction: ${({ reverse }) => reverse && 'row-reverse'};
-  justify-content: space-between;
+  justify-content: ${({ reverse }) => (reverse ? 'flex-end' : 'space-between')};
 
   cursor: pointer;
   padding: 1rem;
+
+  background-color: ${theme.colors.white};
 
   &:hover {
     background-color: ${theme.colors.greyLight};

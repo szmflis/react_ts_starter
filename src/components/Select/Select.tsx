@@ -78,7 +78,7 @@ export interface Option {
 export interface RawSelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   data: Array<Option>
   selectedOption: number
-  setSelectedOption: React.SetStateAction<number>
+  setSelectedOption: (value: React.SetStateAction<number>) => void
   label?: string
 }
 
@@ -109,7 +109,6 @@ export const Select: React.FC<RawSelectProps> = ({ selectedOption, setSelectedOp
   useOnClickOutside(clickOutsideRef, () => setIsActive(false))
 
   const handleOptionClick = (index: number) => {
-    // @ts-ignore
     setSelectedOption(index)
     setIsActive(false)
   }

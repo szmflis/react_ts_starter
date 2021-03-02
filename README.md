@@ -1,14 +1,42 @@
-# Rewrite of leagueops client
+# Boilerplate for react-typescript projects.
 
-v0.0.01
+This project is basically a scaffolding for react-typescript projects with multiple components already programmed and ready to go.\
+It saves hours each time a new typescript-react project is started since it has all the configs and architecture already in place.
 
-# Getting Started with Create React App
+## Components
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Components are written in their raw form ex. RawCheckbox.tsx - which defines their behaviour, different states, lifecycles and such. \
+Those are then styled via styled-components library with styled-system.\
+I consider it a practical approach since even if differently styled component is needed, we change one file, we already have defined stories, plumbing for styled-system and whatnot.
+
+Current list of components can be found in /src/components
+
+Components todo: progressbar - modal - sliders - profilepicture - add round checkbox - codebox with copy - placeholder (ex. apis & other async req) - anchor/link buttons and list elements in semantic
+
+## Used libraries
+
+`styled-components` - used for styling every single component, providing themes and such.\
+`styled-system` - used for adding props to all components, so that pages can be made without specifying additional components with only added paddings/margin and such.\
+`dayjs` - used for time formatting.\
+`axios` - sending api calls.\
+`html-react-parser` - parsing html from rich text editors - for previews / data retrieved from db.\
+`polished` - for additional styling utils.\
+`quill` - rich text editor of choice.\
+`react`, `typescript`.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run storybook`
+
+Runs the configured storybook.\
+Open http://localhost:6006/?path=/story/ to view it in the browser. \
+Page reloads on saves in project directory.
+
+### `npm run build-storybook`
+
+Created a production build of storybook for deployment.
 
 ### `npm start`
 
@@ -43,8 +71,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

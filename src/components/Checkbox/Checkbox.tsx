@@ -4,11 +4,12 @@ import { theme } from '../../styles/theme'
 
 import { RawCheckbox, RawCheckboxProps } from './RawCheckbox'
 
-export interface CheckboxProps extends RawCheckboxProps, SpaceProps {}
+export interface CheckboxProps extends RawCheckboxProps, SpaceProps {
+  reverse?: boolean
+}
 
 export const Checkbox = styled(RawCheckbox)<CheckboxProps>`
   display: flex;
-  flex-direction: row;
   align-items: center;
   position: relative;
   cursor: ${(props) => (props.disabled ? 'default' : 'pointer')};

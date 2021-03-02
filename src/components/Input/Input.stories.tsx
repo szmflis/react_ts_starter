@@ -5,7 +5,8 @@ import { storiesOf } from '@storybook/react'
 import { Flex } from '../Flex/Flex'
 import { Input } from './Input'
 import { Button } from '../Button/Button'
-import { Paragraph } from '../Typography/Typography'
+import { Paragraph, Title } from '../Typography/Typography'
+import { Space } from '../../../.storybook/properties'
 
 storiesOf('Base/Components', module).add('Input', () => {
   const [input1, setInput1] = useState('')
@@ -35,10 +36,10 @@ storiesOf('Base/Components', module).add('Input', () => {
     <Flex p={5} flexDirection="column" width="100vw" alignItems="center">
       <Flex flexDirection="column" mt={5} p={5} minWidth={7} maxWidth={8} bg="white" boxShadow="mdShadow_1">
         <Paragraph py={2}>
-          The input element color can be changed accordingly to wether or not input is valid. In this case if the input
+          The input element color can be changed accordingly to weather or not input is valid. In this case if the input
           is of length 4-9 its valid. Colors are changed by passing valid/touched prop to Input component.
         </Paragraph>
-        <Paragraph py={2}>In this case the color change is visible after submiting (touching).</Paragraph>
+        <Paragraph py={2}>In this case the color change is visible after touching (onBlur).</Paragraph>
         <form onSubmit={handleSubmit}>
           <Input
             value={input1}
@@ -53,6 +54,10 @@ storiesOf('Base/Components', module).add('Input', () => {
             Submit!
           </Button>
         </form>
+      </Flex>
+      <Title mt={6}>Input properties:</Title>
+      <Flex flexWrap="wrap">
+        <Space />
       </Flex>
     </Flex>
   )

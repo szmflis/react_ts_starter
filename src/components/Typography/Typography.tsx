@@ -104,8 +104,6 @@ export const Status = styled.p<CustomTypographyProps>`
   ${typography};
 `
 
-// TODO make li's seperate components with icon on the right text/li on the left
-
 export const RouterLink = styled(Link)<LinkProps>`
     margin: 0;
     padding: 0;
