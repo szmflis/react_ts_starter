@@ -67,9 +67,9 @@ storiesOf('Base/Components', module).add('Dropdown', () => {
           </ListElementLinkWrapper>
         </ListContainer>
         <Flex p={3} borderTop={`1px solid ${theme.colors.grey}`} justifyContent={'space-evenly'}>
-          <AnchorButton href="https://www.reddit.com" label="reddit" icon="reddit" />
-          <AnchorButton href="https://www.linkedin.com" label="linkedin" icon="linkedin" />
-          <AnchorButton href="https://www.apple.com" label="apple" icon="apple" />
+          <AnchorButton href="https://www.reddit.com" icon="reddit" />
+          <AnchorButton href="https://www.linkedin.com" icon="linkedin" />
+          <AnchorButton href="https://www.apple.com" icon="apple" />
         </Flex>
         <Flex p={3} borderTop={`1px solid ${theme.colors.grey}`} flexDirection="column">
           <Paragraph p={3}>Anything can be put inside of the dropdown.</Paragraph>

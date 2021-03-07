@@ -9,6 +9,7 @@ export interface RawDropdownProps extends HTMLAttributes<HTMLDivElement> {
 export const RawDropdown: React.FC<RawDropdownProps> = (props: RawDropdownProps) => {
   const [open, setOpen] = useState(false)
   const contentContainerRef = useRef<HTMLDivElement>(null)
+  const buttonContainerRef = useRef<HTMLDivElement>(null)
 
   /*
     handleClickOutside gets mouseclick event, if that click happended outside of
@@ -19,10 +20,13 @@ export const RawDropdown: React.FC<RawDropdownProps> = (props: RawDropdownProps)
   */
 
   const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-    const container = contentContainerRef.current
+    const contentContainer = contentContainerRef.current
+    const buttonContainer = buttonContainerRef.current
 
-    if (container && !container.contains(event.target as Node)) {
-      setOpen(false)
+    if (contentContainer && buttonContainer) {
+      if (!contentContainer.contains(event.target as Node) && !buttonContainer.contains(event.target as Node)) {
+        setOpen(false)
+      }
     }
   }
 
@@ -34,9 +38,15 @@ export const RawDropdown: React.FC<RawDropdownProps> = (props: RawDropdownProps)
   }, [])
 
   return (
-    <div className={props.className} ref={contentContainerRef}>
-      <Button variant="transparent" icon={props.icon} onClick={() => setOpen(!open)} />
-      {open && <div className="content-container">{props.children}</div>}
+    <div className={props.className}>
+      <div className="buttonContainer" ref={buttonContainerRef}>
+        <Button variant="transparent" icon={props.icon} onClick={() => setOpen(!open)} />
+      </div>
+      {open && (
+        <div className="content-container" ref={contentContainerRef}>
+          {props.children}
+        </div>
+      )}
     </div>
   )
 }

@@ -1,141 +1,62 @@
-import React, { useState, SelectHTMLAttributes, useRef, useEffect } from 'react'
+import { RawSelect, RawSelectProps } from './RawSelect'
+import { space, SpaceProps } from 'styled-system'
 import styled from 'styled-components'
-import { Flex } from '../Flex/Flex'
 import { theme } from '../../styles/theme'
-import { Icon } from '../Icon/Icon'
 
-/*
-  TODO
-  add label option
-  split into raw & styled
-  figure out better usage (defaulting option etc..)
-*/
+export interface SelectProps extends RawSelectProps, SpaceProps {
+  rect?: boolean
+}
 
-const Wrapper = styled(Flex)`
+export const Select = styled(RawSelect)<SelectProps>`
   position: relative;
-`
+  display: inline-block;
 
-const RotatingChevron = styled(Icon)<{ isActive: boolean }>`
-  transform: ${({ isActive }) => (isActive ? 'rotate(0deg)' : 'rotate(180deg)')};
-`
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
 
-const DropdownButton = styled.button<{ isActive: boolean }>`
-  cursor: pointer;
-  outline: none;
-  font-family: inherit;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 150px;
-  height: 35px;
-  padding: 0.3rem 1rem;
-  background-color: ${({ isActive }) => (isActive ? theme.colors.greyLight : theme.colors.white)};
-
-  border: 1px solid ${theme.colors.primary};
-  border-radius: 1rem;
-
-  font-size: ${theme.fontSizes[3]};
-
-  &:hover {
-    background-color: ${theme.colors.primaryLightest};
+    color: ${theme.colors.black};
+    background-color: ${theme.colors.white};
+    box-shadow: ${theme.shadows.mdShadow_1};
+    min-width: 150px;
+    animation: ${theme.keyframes.fadeInScale} 0.2s;
   }
 
-  transition: background-color 0.2s;
-`
-
-const Dropdown = styled.ul<{ isActive: boolean }>`
-  position: absolute;
-  top: 75%;
-  min-width: 150px;
-  list-style: none;
-  padding: 0;
-
-  border: 1px solid ${theme.colors.primaryLightest};
-
-  color: ${theme.colors.black};
-  background-color: ${theme.colors.white};
-  transition: opacity 0.2s;
-
-  opacity: ${({ isActive }) => (isActive ? 1 : 0)};
-  visibility: ${({ isActive }) => (isActive ? 'visible' : 'hidden')};
-`
-
-const DropdownOption = styled.li<{ selectedOption: number; index: number }>`
-  padding: 0.75rem;
-  cursor: pointer;
-  &:hover {
-    background-color: ${theme.colors.primaryLightest};
-  }
-`
-
-export interface Option {
-  display: string
-  value: string
-}
-
-export interface RawSelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
-  data: Array<Option>
-  selectedOption: number
-  setSelectedOption: (value: React.SetStateAction<number>) => void
-  label?: string
-}
-
-const useOnClickOutside = (
-  ref: React.RefObject<HTMLUListElement>,
-  callback: (value: React.SetStateAction<boolean>) => void
-) => {
-  useEffect(() => {
-    const listener = (event: MouseEvent | TouchEvent) => {
-      if (!ref.current || ref.current.contains(event.target as Node)) {
-        return
-      }
-      callback(true)
+  .dropdownOption {
+    padding: 0.75rem;
+    cursor: pointer;
+    &:hover {
+      background-color: ${theme.colors.primaryLightest};
     }
-    document.addEventListener('mousedown', listener)
-    document.addEventListener('touchstart', listener)
-    return () => {
-      document.removeEventListener('mousedown', listener)
-      document.removeEventListener('touchstart', listener)
+  }
+
+  button {
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 150px;
+    height: 35px;
+    padding: 0.3rem 1rem;
+    background-color: ${theme.colors.white};
+
+    border: 1px solid ${theme.colors.primary};
+    border-radius: ${({ rect }) => (rect ? 0 : '1.5rem')};
+
+    font-size: ${theme.fontSizes[3]};
+
+    &:hover {
+      background-color: ${theme.colors.primaryLightest};
     }
-  }, [ref, callback])
-}
 
-export const Select: React.FC<RawSelectProps> = ({ selectedOption, setSelectedOption, data }) => {
-  const [isActive, setIsActive] = useState(false)
-  const clickOutsideRef = useRef<HTMLUListElement>(null)
-
-  useOnClickOutside(clickOutsideRef, () => setIsActive(false))
-
-  const handleOptionClick = (index: number) => {
-    setSelectedOption(index)
-    setIsActive(false)
+    transition: background-color 0.2s;
   }
 
-  const handleButtonClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    event.stopPropagation()
-    setIsActive(!isActive)
-  }
-
-  return (
-    <Wrapper my={5}>
-      <DropdownButton isActive={isActive} type="button" onMouseDown={handleButtonClick}>
-        {data[selectedOption].display}
-        <RotatingChevron type="chevron" textColor="primary" fontSize={4} isActive={isActive} />
-      </DropdownButton>
-      <Dropdown isActive={isActive} ref={clickOutsideRef}>
-        {data.map((point: Option, index: number) => (
-          <DropdownOption
-            index={index}
-            key={index}
-            selectedOption={selectedOption}
-            onClick={() => handleOptionClick(index)}
-          >
-            {point.display}
-          </DropdownOption>
-        ))}
-      </Dropdown>
-    </Wrapper>
-  )
-}
+  ${space};
+`

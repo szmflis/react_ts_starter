@@ -6,6 +6,7 @@ import { Title } from '../Typography/Typography'
 import { Button } from './Button'
 import { Border, Layout, Position, Space } from '../../../.storybook/properties'
 import { AnchorButton } from './AnchorButton'
+import { LinkButton } from './LinkButton'
 
 const onClick = (): void => {
   console.log('On click trigerred')
@@ -192,10 +193,22 @@ storiesOf('Base/Components', module).add('Button', () => (
     <Title mt={5} mb={3}>
       Anchor Button
     </Title>
-    <Flex flexWrap="wrap" py={3} my={3}>
-      <AnchorButton icon="github" label="Github" href="https://www.github.com" />
-      <AnchorButton label="Github" href="https://www.github.com" />
+    <Flex flexWrap="wrap" py={3} my={3} alignItems="center">
       <AnchorButton icon="github" href="https://www.github.com" />
+      <AnchorButton icon="github" href="https://www.github.com">
+        Github
+      </AnchorButton>
+      <AnchorButton href="https://www.github.com">Github</AnchorButton>
+    </Flex>
+    <Title mt={5} mb={3}>
+      Link Button
+    </Title>
+    <Flex flexWrap="wrap" py={3} my={3} alignItems="center">
+      <LinkButton icon="settings" to="/?path=/story/base-components--checkbox" />
+      <LinkButton icon="settings" to="/?path=/story/base-components--checkbox">
+        SETTINGS
+      </LinkButton>
+      <LinkButton to="/?path=/story/base-components--checkbox">SETTINGS</LinkButton>
     </Flex>
 
     <Title mt={6}>Button properties:</Title>

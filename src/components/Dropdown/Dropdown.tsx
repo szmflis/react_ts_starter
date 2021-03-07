@@ -7,16 +7,22 @@ export interface DropdownProps extends RawDropdownProps, SpaceProps, LayoutProps
 
 export const Dropdown = styled(RawDropdown)<DropdownProps>`
   position: relative;
-  display: inline-block;
 
   .content-container {
     position: absolute;
     top: 100%; // container always begins at the bottom of a button
     left: 0;
     z-index: 2;
+
     background-color: white;
     box-shadow: ${theme.shadows.mdShadow_1};
+    animation: ${theme.keyframes.fadeInTranslateY} 0.3s;
+
     ${layout};
+  }
+
+  .buttonContainer {
+    display: inline-block;
   }
 
   ${space};

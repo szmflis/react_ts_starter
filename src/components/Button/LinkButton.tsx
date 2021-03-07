@@ -1,17 +1,17 @@
-/* eslint-disable indent */
 import React from 'react'
 import { ButtonProps, NavigationButton } from './Button'
+import { Link } from 'react-router-dom'
 
-export interface AnchorButtonProps extends ButtonProps {
-  href: string
+export interface LinkButtonProps extends ButtonProps {
+  to: string
 }
 
-export const AnchorButton: React.FC<AnchorButtonProps> = (props: AnchorButtonProps) => {
+export const LinkButton: React.FC<LinkButtonProps> = (props: LinkButtonProps) => {
   return (
-    <a href={props.href}>
+    <Link to={props.to}>
       <NavigationButton variant="transparent" icon={props.icon} label={!!props.children}>
         {props.children}
       </NavigationButton>
-    </a>
+    </Link>
   )
 }

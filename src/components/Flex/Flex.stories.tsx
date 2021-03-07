@@ -3,7 +3,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import { Border, Color, Layout, Position, Shadow, Space, Typography, Flexbox } from '../../../.storybook/properties'
-import { Flex } from '../Flex/Flex'
+import { Flex } from './Flex'
 import { SectionTitle } from '../Typography/Typography'
 import { Box } from '../Box/Box'
 

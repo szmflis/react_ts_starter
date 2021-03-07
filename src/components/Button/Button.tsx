@@ -10,6 +10,7 @@ import {
   ShadowProps,
   space,
   SpaceProps,
+  typography,
   TypographyProps,
   variant,
 } from 'styled-system'
@@ -107,11 +108,30 @@ export const Button = styled(RawButton)<ButtonProps>`
             }
           `}
 
-    ${border}
-    ${layout}
-    ${position}
-    ${space}
-    ${buttonStyle}
+    ${border};
+    ${layout};
+    ${position};
+    ${space};
+    ${typography};
+    ${buttonStyle};
     
-    ${(props) => props.disabled && buttons.disabled}
+    ${(props) => props.disabled && buttons.disabled};
+`
+
+export const NavigationButton = styled(Button)<{ label?: boolean }>`
+  flex-direction: column-reverse;
+  height: auto;
+  width: auto;
+  padding: 1rem;
+  border-radius: 8px;
+
+  ${Icon} {
+    margin: 0 0 0.5rem 0; // resetting margin applied in Button Component.
+    ${({ label }) =>
+      !label &&
+      css`
+        margin: 0;
+        font-size: ${theme.fontSizes[5]};
+      `}
+  }
 `
