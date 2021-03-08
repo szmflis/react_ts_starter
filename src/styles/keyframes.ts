@@ -10,6 +10,24 @@ const FadeIn = keyframes`
   }
 `
 
+const RotationClockwise = keyframes`
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`
+
+const RotationCounterclockwise = keyframes`
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+`
+
 const FadeInScale = keyframes`
   from {
     opacity: 0.3;
@@ -48,4 +66,6 @@ export default {
   fadeInScale: FadeInScale,
   fadeInTranslateY: FadeInTranslateY,
   rotateTopBottom: RotateTopBottom,
+  rotationClockwise: RotationClockwise,
+  rotationCounterclockwise: RotationCounterclockwise,
 }
