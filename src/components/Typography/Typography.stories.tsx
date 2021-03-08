@@ -6,7 +6,7 @@ import { storiesOf } from '@storybook/react'
 import { Color, Space, Typography } from '../../../.storybook/properties'
 import { Box } from '../Box/Box'
 import { Flex } from '../Flex/Flex'
-import { AnchorLink, Caption, Paragraph, RouterLink, SectionTitle, Title } from './Typography'
+import { AnchorLink, Caption, Paragraph, RouterLink, SectionTitle, Subtitle, Title } from './Typography'
 
 storiesOf('Base/Typography', module)
   .addDecorator((story) => <StaticRouter location="projects">{story()}</StaticRouter>)
@@ -43,10 +43,10 @@ storiesOf('Base/Typography', module)
   .add('Subtitle', () => (
     <Box>
       <Box m={4} p={4}>
-        <SectionTitle>H3 - Subtitle</SectionTitle>
+        <Subtitle>H3 - Subtitle</Subtitle>
       </Box>
       <Box m={4} p={4} bg="primary">
-        <SectionTitle textColor="white">H3 - Subtitle</SectionTitle>
+        <Subtitle textColor="white">H3 - Subtitle</Subtitle>
       </Box>
     </Box>
   ))

@@ -53,7 +53,6 @@ export const Button = styled(RawButton)<ButtonProps>`
 
     height: 38px;
     padding: 0 3rem;
-    margin: 5px;
 
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.2s;

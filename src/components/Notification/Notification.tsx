@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 import { border, BorderProps, space, SpaceProps, typography, TypographyProps, variant } from 'styled-system'
-import { color, ColorProps } from '../../styles/colorOverride'
-import { theme } from '../../styles/theme'
-import notificationVariants from '../../styles/variants/notifications'
-import { Caption } from '../Typography/Typography'
-import { RawNotification, RawNotificationProps } from './RawNotification'
+import { ColorProps } from '../../styles/colorOverride'
 
-export interface NotificationProps extends RawNotificationProps, SpaceProps, TypographyProps, BorderProps, ColorProps {
-  visible: boolean
+import notificationVariants from '../../styles/variants/notifications'
+
+import { RawNotification } from './RawNotification'
+import { theme } from '../../styles/theme'
+import { Caption } from '../Typography/Typography'
+
+export interface NotificationProps extends SpaceProps, TypographyProps, BorderProps, ColorProps {
   variant?: keyof typeof notificationVariants
 }
 
@@ -16,18 +17,15 @@ const notificationVariant = variant({ key: 'notifications' })
 export const Notification = styled(RawNotification)<NotificationProps>`
   display: flex;
 
-  display: ${({ visible }) => !visible && 'none'};
-  transition: all 0.3s;
+  animation: 0.2s ${theme.keyframes.fadeInTranslateY};
+  transition: 0.2s all;
 
   ${Caption} {
-    font-size: ${theme.fontSizes[3]};
-    font-weight: ${theme.fontWeights[4]};
-
+    font-weight: ${theme.fontWeights[5]};
     ${typography};
-    ${color}
-    ${notificationVariant};
   }
 
   ${border};
   ${space};
+  ${notificationVariant};
 `

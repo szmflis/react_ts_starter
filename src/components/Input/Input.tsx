@@ -9,18 +9,6 @@ export interface InputProps extends RawInputProps, SpaceProps {
   touched?: boolean
 }
 
-const touchedInvalid = css`
-  border-bottom: 1px solid ${theme.colors.danger};
-`
-
-const touchedValid = css`
-  border-bottom: 1px solid ${theme.colors.success};
-`
-
-const untouched = css`
-  border-bottom: 1px solid ${theme.colors.primaryDark};
-`
-
 export const Input = styled(RawInput)<InputProps>`
   display: flex;
   flex-direction: column;
@@ -36,6 +24,7 @@ export const Input = styled(RawInput)<InputProps>`
     color: ${theme.colors.black};
     font-size: ${theme.fontSizes[3]};
     border-bottom: 1px solid ${theme.colors.primaryLight};
+
     &::placeholder {
       opacity: 0.7;
     }
@@ -43,12 +32,18 @@ export const Input = styled(RawInput)<InputProps>`
     &:focus {
       outline: none;
       background-color: ${theme.colors.greyLight};
-      ${({ valid }) => (valid ? touchedValid : touchedInvalid)};
-      ${({ touched }) => !touched && untouched};
     }
 
-    ${({ valid }) => (valid ? touchedValid : touchedInvalid)};
-    ${({ touched }) => !touched && untouched};
+    border-color: ${({ valid }) => (valid ? theme.colors.success : theme.colors.danger)};
+    border-color: ${({ touched }) => !touched && theme.colors.primaryDark};
+
+    ${({ disabled }) =>
+      disabled &&
+      css`
+        background-color: ${theme.colors.greyLight};
+        border-color: ${theme.colors.greyDarkest};
+        cursor: default;
+      `}
   }
   ${space};
 `

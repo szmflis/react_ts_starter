@@ -34,6 +34,7 @@ export const RawInput: React.FC<RawInputProps> = (props: RawInputProps) => {
     <div className={props.className}>
       {label}
       {input}
+      {props.children} {/* For notification elements */}
     </div>
   )
 }

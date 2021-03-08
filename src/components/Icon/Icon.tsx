@@ -14,9 +14,9 @@ const iconVariant = variant({ key: 'icons' })
 
 /* 
   Actual styling happens on Flex component returned from RawIcon. 
-  That's becouse svg icons can be modified as text, so applying textSize
-  to that Flex component actually sizes the icon aswell.
-  It also makes centering alot easier.
+  That's because svg icons can be modified as text, so applying textSize
+  to that Flex component actually sizes the icon as well.
+  It also makes centering a lot easier.
 */
 export const Icon = styled(RawIcon)<IconProps>`
   ${space};

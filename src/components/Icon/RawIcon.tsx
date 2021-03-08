@@ -13,6 +13,7 @@ export const RawIcon: React.FC<RawIconProps> = (props: RawIconProps) => {
   return (
     <Flex className={props.className} centerContent>
       {/* props.type will take corresponding icon from icons array */}
+      {/* That array is specified in ./icons.tsx */}
       {icons[props.type]}
     </Flex>
   )

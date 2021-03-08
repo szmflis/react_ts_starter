@@ -10,7 +10,4 @@ export default {
   success: {
     color: colors.success,
   },
-  info: {
-    opacity: 0.9,
-  },
 }
