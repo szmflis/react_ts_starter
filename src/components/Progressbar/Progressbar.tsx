@@ -4,10 +4,12 @@ import { theme } from '../../styles/theme'
 import { Flex } from '../Flex/Flex'
 import { Caption } from '../Typography/Typography'
 import { Icon } from '../Icon/Icon'
+import { RotatingCircle } from '../Placeholders/RotatingCircle'
+import { LayoutProps, SpaceProps } from 'styled-system'
 
-export interface ProgressbarProps {
-  bgColor: string
+export interface ProgressbarProps extends SpaceProps, LayoutProps {
   percentCompleted: number
+  bgColor?: string
   circle?: boolean
 }
 
@@ -23,26 +25,14 @@ const ProgressBar = styled.div`
 const Filler = styled.div<{ completed: number }>`
   height: 100%;
   width: ${({ completed }) => completed}%;
+
   border-radius: inherit;
-  text-align: center;
   background-color: ${({ completed }) => (completed == 100 ? theme.colors.success : theme.colors.primary)};
 
   transition: all 0.5s;
 `
 
-const LoadingCircle = styled.div<{ completed: boolean }>`
-  animation: ${theme.keyframes.rotationClockwise} 2s forwards linear infinite;
-  border: 5px solid #fff;
-  border-radius: 50%;
-  border-top-color: ${theme.colors.primaryLight};
-
-  height: 70px;
-  width: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 25px;
-
+const LoadingCircle = styled(RotatingCircle)<{ completed: boolean }>`
   ${({ completed }) =>
     completed
       ? css`
@@ -50,21 +40,21 @@ const LoadingCircle = styled.div<{ completed: boolean }>`
         `
       : css``}
 
-  transition: .5s all;
+  transition: .4s all;
 
   ${Icon} {
     opacity: ${({ completed }) => (completed ? 1 : 0)};
     font-size: ${({ completed }) => (completed ? theme.fontSizes[6] : theme.fontSizes[5])};
-    transition: 0.5s all;
     animation: ${theme.keyframes.rotationCounterclockwise} 2s forwards linear infinite;
+    transition: 0.4s all;
   }
 `
 
 export const Progressbar: React.FC<ProgressbarProps> = (props: ProgressbarProps) => {
   return (
-    <Flex width={6} flexDirection="column" centerContent>
+    <Flex flexDirection="column" centerContent {...props}>
       {props.circle && (
-        <LoadingCircle completed={props.percentCompleted == 100}>
+        <LoadingCircle completed={props.percentCompleted == 100} marginBottom={5}>
           <Icon type="doneAll" fontSize={5} textColor="success" />
         </LoadingCircle>
       )}
@@ -73,7 +63,7 @@ export const Progressbar: React.FC<ProgressbarProps> = (props: ProgressbarProps)
       </ProgressBar>
       <Flex width="100%" justifyContent="space-between" py={2}>
         <Caption letterSpacing={1} fontWeight={5}>
-          Loading ...
+          {props.percentCompleted == 100 ? 'Finished' : 'Loading ...'}
         </Caption>
         <Caption letterSpacing={1} fontWeight={5}>
           {props.percentCompleted}%
