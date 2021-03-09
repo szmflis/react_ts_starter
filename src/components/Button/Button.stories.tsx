@@ -3,10 +3,10 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { Flex } from '../Flex/Flex'
 import { Title } from '../Typography/Typography'
-import { Button } from './Button'
+import { Button, NavigationButton } from './Button'
 import { Border, Layout, Position, Space } from '../../../.storybook/properties'
-import { AnchorButton } from './AnchorButton'
-import { LinkButton } from './LinkButton'
+import { LinkContainer } from '../NavigationContainers/LinkContainer'
+import { AnchorContainer } from '../NavigationContainers/AnchorContainer'
 
 const onClick = (): void => {
   console.log('On click trigerred')
@@ -189,26 +189,33 @@ storiesOf('Base/Components', module).add('Button', () => (
       <Button variant="transparent" mx={4} onClick={onClick} icon="launch" />
       <Button variant="disabled" mx={4} onClick={onClick} icon="square" />
     </Flex>
-
     <Title mt={5} mb={3}>
-      Anchor Button
+      Navigation buttons - Anchor and react-router-dom Link
     </Title>
     <Flex flexWrap="wrap" py={3} my={3} alignItems="center">
-      <AnchorButton icon="github" href="https://www.github.com" />
-      <AnchorButton icon="github" href="https://www.github.com">
-        Github
-      </AnchorButton>
-      <AnchorButton href="https://www.github.com">Github</AnchorButton>
+      <LinkContainer to="/dupa">
+        <NavigationButton icon="settings">Settings</NavigationButton>
+      </LinkContainer>
+      <LinkContainer to="/dupa">
+        <NavigationButton>Settings</NavigationButton>
+      </LinkContainer>
+      <LinkContainer to="/dupa">
+        <NavigationButton icon="settings" />
+      </LinkContainer>
     </Flex>
-    <Title mt={5} mb={3}>
-      Link Button
-    </Title>
+
     <Flex flexWrap="wrap" py={3} my={3} alignItems="center">
-      <LinkButton icon="settings" to="/?path=/story/base-components--checkbox" />
-      <LinkButton icon="settings" to="/?path=/story/base-components--checkbox">
-        SETTINGS
-      </LinkButton>
-      <LinkButton to="/?path=/story/base-components--checkbox">SETTINGS</LinkButton>
+      <AnchorContainer href="https://www.github.com">
+        <NavigationButton icon="github">Github</NavigationButton>
+      </AnchorContainer>
+
+      <AnchorContainer href="https://www.github.com">
+        <NavigationButton>Github</NavigationButton>
+      </AnchorContainer>
+
+      <AnchorContainer href="https://www.github.com">
+        <NavigationButton icon="github" />
+      </AnchorContainer>
     </Flex>
 
     <Title mt={6}>Button properties:</Title>

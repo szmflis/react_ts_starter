@@ -7,6 +7,7 @@ export interface DropdownProps extends RawDropdownProps, SpaceProps, LayoutProps
 
 export const Dropdown = styled(RawDropdown)<DropdownProps>`
   position: relative;
+  width: 40px;
 
   .content-container {
     position: absolute;

@@ -25,10 +25,11 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           onChange={() => {
             setCheck1(!check1)
           }}
-          label="Checked checkbox"
           p={1}
           my={3}
-        />
+        >
+          Checked checkbox
+        </Checkbox>
         <Checkbox
           name="disabled"
           checked={check2}
@@ -36,20 +37,22 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           onChange={() => {
             setCheck2(!check2)
           }}
-          label="Disabled checkbox"
           p={1}
           my={3}
-        />
+        >
+          Disabled checkbox
+        </Checkbox>
         <Checkbox
           name="unchecked"
           checked={check3}
           onChange={() => {
             setCheck3(!check3)
           }}
-          label="Unchecked checkbox"
           p={1}
           my={3}
-        />
+        >
+          Unchecked checkbox
+        </Checkbox>
       </Flex>
       <Flex flexDirection="column" p={2} maxWidth={9}>
         <Checkbox
@@ -58,10 +61,13 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           onChange={() => {
             setCheck4(!check4)
           }}
-          label="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
           p={1}
           my={3}
-        />
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat.
+        </Checkbox>
         <Checkbox
           name="disabled"
           checked={check5}
@@ -69,20 +75,24 @@ storiesOf('Base/Components', module).add('Checkbox', () => {
           onChange={() => {
             setCheck5(!check5)
           }}
-          label="Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt."
           p={1}
           my={3}
-        />
+        >
+          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+          dolores eos qui ratione voluptatem sequi nesciunt.
+        </Checkbox>
         <Checkbox
           name="unchecked"
           checked={check6}
           onChange={() => {
             setCheck6(!check6)
           }}
-          label="At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque."
           p={1}
           my={3}
-        />
+        >
+          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
+          atque.
+        </Checkbox>
       </Flex>
 
       <Title mt={6}>Checkbox properties:</Title>

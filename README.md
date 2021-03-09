@@ -11,7 +11,7 @@ I consider it a practical approach since even if differently styled component is
 
 Current list of components can be found in /src/components
 
-Components todo: progressbar - modal - sliders - profilepicture - add round checkbox - codebox with copy - placeholder (ex. apis & other async req) - anchor/link buttons and list elements in semantic
+Components todo: modal - profilepicture - add round checkbox - codebox with copy - placeholder (ex. apis & other async req) - correct list elements - anchorelem - linkelem
 
 ## Used libraries
 

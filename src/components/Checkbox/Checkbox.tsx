@@ -2,9 +2,10 @@ import styled from 'styled-components'
 import { space, SpaceProps } from 'styled-system'
 import { theme } from '../../styles/theme'
 
-import { RawCheckbox, RawCheckboxProps } from './RawCheckbox'
+import { RawCheckbox } from './RawCheckbox'
+import { InputHTMLAttributes } from 'react'
 
-export interface CheckboxProps extends RawCheckboxProps, SpaceProps {
+export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement>, SpaceProps {
   reverse?: boolean
 }
 

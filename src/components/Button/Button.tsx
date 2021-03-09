@@ -117,17 +117,30 @@ export const Button = styled(RawButton)<ButtonProps>`
     ${(props) => props.disabled && buttons.disabled};
 `
 
-export const NavigationButton = styled(Button)<{ label?: boolean }>`
+export const NavigationButton = styled(Button)`
   flex-direction: column-reverse;
   height: auto;
   width: auto;
   padding: 1rem;
   border-radius: 8px;
 
+  background: inherit;
+  box-shadow: none;
+
+  &:hover {
+    box-shadow: none;
+    background-color: ${theme.colors.grey};
+    transform: none;
+  }
+
+  &:active {
+    background-color: ${theme.colors.greyDark};
+  }
+
   ${Icon} {
     margin: 0 0 0.5rem 0; // resetting margin applied in Button Component.
-    ${({ label }) =>
-      !label &&
+    ${({ children }) =>
+      !children &&
       css`
         margin: 0;
         font-size: ${theme.fontSizes[5]};

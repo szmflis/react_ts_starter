@@ -145,7 +145,7 @@ export const AnchorLink = styled.a<LinkProps>`
     color: ${theme.colors.black};
 
     &:hover {
-        color: ${theme.colors.primaryDarkest};
+      color: ${theme.colors.primaryDarkest};
     }
 
     ${(props) =>

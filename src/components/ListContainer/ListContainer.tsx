@@ -30,12 +30,13 @@ export interface ListContainerProps
     BorderProps,
     FlexboxProps {
   ref?: React.MutableRefObject<HTMLDivElement>
+  listStyle?: 'inside' | 'none'
 }
 
 export const ListContainer = styled.ul<ListContainerProps>`
   display: flex;
   flex-direction: column;
-  list-style: none;
+  list-style: ${({ listStyle }) => (listStyle ? listStyle : 'square')};
 
   margin: 0;
   padding: 0;

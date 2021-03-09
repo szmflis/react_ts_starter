@@ -3,11 +3,9 @@ import React, { InputHTMLAttributes } from 'react'
 import { Icon } from '../Icon/Icon'
 import { IconType } from '../Icon/RawIcon'
 
-export interface RawCheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string
-}
-
-export const RawCheckbox: React.FC<RawCheckboxProps> = (props: RawCheckboxProps) => {
+export const RawCheckbox: React.FC<InputHTMLAttributes<HTMLInputElement>> = (
+  props: InputHTMLAttributes<HTMLInputElement>
+) => {
   const iconName: IconType = props.checked ? 'checkedSquare' : 'square'
 
   return (
@@ -21,7 +19,7 @@ export const RawCheckbox: React.FC<RawCheckboxProps> = (props: RawCheckboxProps)
         checked={props.checked}
         disabled={props.disabled}
       />
-      {props.label}
+      {props.children}
     </label>
   )
 }

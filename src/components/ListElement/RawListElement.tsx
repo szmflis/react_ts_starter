@@ -1,16 +1,9 @@
 import React, { LiHTMLAttributes } from 'react'
-import { IconType } from '../Icon/RawIcon'
-import { Icon } from '../Icon/Icon'
 
-export interface RawListElementProps extends LiHTMLAttributes<HTMLLIElement> {
-  icon?: IconType
-}
-
-export const RawListElement: React.FC<RawListElementProps> = (props: RawListElementProps) => {
+export const RawListElement: React.FC<LiHTMLAttributes<HTMLLIElement>> = (props: LiHTMLAttributes<HTMLLIElement>) => {
   return (
-    <li className={props.className} onClick={props.onClick}>
+    <li className={props.className} {...props}>
       {props.children}
-      {props.icon && <Icon type={props.icon} fontSize={3} transTime={0.1} />}
     </li>
   )
 }
