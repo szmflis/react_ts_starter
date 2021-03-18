@@ -7,11 +7,13 @@ import { Input } from './Input'
 import { Button } from '../Button/Button'
 import { Paragraph, Title } from '../Typography/Typography'
 import { Space } from '../../../.storybook/properties'
+import { Notification } from '../Notification/Notification'
 
 storiesOf('Base/Components', module).add('Input', () => {
   const [input1, setInput1] = useState('')
   const [touched, setTouched] = useState(false)
   const [valid, setValid] = useState(false)
+  const [notification, setNotification] = useState<null | string>(null)
 
   const handleInputChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value
@@ -20,8 +22,12 @@ storiesOf('Base/Components', module).add('Input', () => {
 
     if (value.length > 3 && value.length < 10) {
       setValid(true)
+      setNotification(null)
     } else {
       setValid(false)
+      if (touched) {
+        setNotification('Input value must be betweeen 3 and 10 characters')
+      }
     }
   }
 
@@ -40,6 +46,7 @@ storiesOf('Base/Components', module).add('Input', () => {
           is of length 4-9 its valid. Colors are changed by passing valid/touched prop to Input component.
         </Paragraph>
         <Paragraph py={2}>In this case the color change is visible after touching (onBlur).</Paragraph>
+        <Paragraph py={2}>Additionally rendering Notification component depending on validity of inputs.</Paragraph>
         <form onSubmit={handleSubmit}>
           <Input
             value={input1}
@@ -50,16 +57,17 @@ storiesOf('Base/Components', module).add('Input', () => {
             placeholder="Login"
             onBlur={() => setTouched(true)}
           />
-          <Input
-            value={input1}
-            onChange={handleInputChange1}
-            touched={touched}
-            valid={valid}
-            py={5}
-            placeholder="Disabled"
-            onBlur={() => setTouched(true)}
-            disabled
-          />
+          {notification && <Notification variant="warning">{notification}</Notification>}
+          {/*<Input*/}
+          {/*  value={input1}*/}
+          {/*  onChange={handleInputChange1}*/}
+          {/*  touched={touched}*/}
+          {/*  valid={valid}*/}
+          {/*  py={5}*/}
+          {/*  placeholder="Disabled"*/}
+          {/*  onBlur={() => setTouched(true)}*/}
+          {/*  disabled*/}
+          {/*/>*/}
           <Button type="submit" variant="primary" small icon="doneAll">
             Submit!
           </Button>

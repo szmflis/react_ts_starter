@@ -1,0 +1,3 @@
+export const AUTOCOMPLETE_API = {
+  BASE_URL: process.env.REACT_APP_AUTOCOMPLETE_URL,
+}

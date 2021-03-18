@@ -1,10 +1,28 @@
 import React from 'react'
-import { BiMicrochip, BiCheckSquare, BiSquare, BiChevronDownCircle, BiLinkExternal } from 'react-icons/bi'
+import { BiMicrochip, BiCheckSquare, BiSquare, BiChevronDownCircle, BiLinkExternal, BiSearch } from 'react-icons/bi'
 import { BsArrowRepeat } from 'react-icons/bs'
 import { VscDashboard, VscGithub } from 'react-icons/vsc'
-import { MdSettings, MdLaunch, MdInfoOutline, MdDone, MdDoneAll, MdDeleteForever, MdClose } from 'react-icons/md'
+import {
+  MdSettings,
+  MdLaunch,
+  MdInfoOutline,
+  MdDone,
+  MdDoneAll,
+  MdDeleteForever,
+  MdClose,
+  MdBugReport,
+} from 'react-icons/md'
 import { HiMenu } from 'react-icons/hi'
-import { AiOutlineApple, CgProfile, FaAmazon, FaGoogle, FaLinkedinIn, IoLogoReddit } from 'react-icons/all'
+import {
+  AiOutlineApple,
+  AiOutlineUndo,
+  CgProfile,
+  FaAmazon,
+  FaGoogle,
+  FaKeyboard,
+  FaLinkedinIn,
+  IoLogoReddit,
+} from 'react-icons/all'
 
 /* importing icons from react-icons lib */
 /* each accessible via "type" property on Icon component */
@@ -33,4 +51,8 @@ export const icons = {
   profile: <CgProfile />,
   external: <BiLinkExternal />,
   dashboard: <VscDashboard />,
+  keyboard: <FaKeyboard />,
+  search: <BiSearch />,
+  undo: <AiOutlineUndo />,
+  bug: <MdBugReport />,
 }
