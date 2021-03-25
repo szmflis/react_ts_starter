@@ -119,5 +119,3 @@ storiesOf('Base/Components', module).add('Dropdown', () => {
     </Flex>
   )
 })
-
-export {}

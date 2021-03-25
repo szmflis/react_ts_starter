@@ -691,6 +691,22 @@ storiesOf('Base/Layout', module).add('Flex', () => (
           <Box bg="gold" size={2} />
         </Flex>
       </Flex>
+
+      <Flex p="1rem" m="1rem" width={7} height={6} bg="greyLight" boxShadow="mdShadow_1" flexWrap="wrap">
+        <Box bg="primary" size={2} />
+        <Box bg="warning" size={2} />
+        <Box bg="success" size={2} />
+        <Box bg="danger" size={2} />
+        <Box bg="black" size={2} />
+        <Box bg="error" size={2} />
+        <Box bg="yellow" size={2} />
+        <Box bg="cyan" size={2} />
+        <Box bg="blue" size={2} />
+        <Box bg="chocolate" size={2} />
+        <Box bg="darkgreen" size={2} />
+        <Box bg="dodgerblue" size={2} />
+        <Box bg="gold" size={2} />
+      </Flex>
     </Flex>
 
     <SectionTitle mt={6}>Box properties:</SectionTitle>
