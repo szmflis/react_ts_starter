@@ -16,6 +16,7 @@ export interface Suggestion {
   value: string
   additionalInfo?: string
 }
+
 export const Search: React.FC<RawSearchProps> = (props: RawSearchProps) => {
   /* TODO: add onscreen keyboard and speech to text */
   const [query, setQuery] = useState<string>('')

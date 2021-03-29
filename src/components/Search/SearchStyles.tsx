@@ -19,8 +19,6 @@ export const SuggestionsContainer = styled.div`
 export const SearchContainer = styled.div<{ dropdownActive?: boolean }>`
   position: relative;
 
-  visibility: hidden;
-
   display: flex;
   align-items: center;
 

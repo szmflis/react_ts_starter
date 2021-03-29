@@ -28,7 +28,6 @@ storiesOf('Base/Components', module).add('Search', () => {
       <StyledForm onSubmit={handleSubmit}>
         <Search apiCb={getAutocomplete} my={5} icon="google" placeholder="Name of location..." setValue={setInput} />
         {formResult}
-        <Flex width="100px" height="100px" backgroundColor="blue"></Flex>
       </StyledForm>
     </Flex>
   )
