@@ -15,14 +15,14 @@ export const Modal = styled(RawModal)<ModalProps>`
   padding: 1rem;
   z-index: 1000;
 
-  ${flexbox};
   ${space};
-  ${shadow};
   ${color};
-  ${typography};
+  ${shadow};
   ${layout};
   ${border};
+  ${flexbox};
   ${position};
+  ${typography};
 `
 
 export const ModalOverlay = styled.div`
@@ -33,4 +33,6 @@ export const ModalOverlay = styled.div`
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1000;
+
+  animation: 0.2s ${theme.keyframes.fadeIn};
 `
